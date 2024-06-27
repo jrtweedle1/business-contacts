@@ -1,0 +1,11 @@
+version: '3.8'  # Specify the Docker Compose file version
+
+services:
+  server:
+    build: ./server  # Path to the backend Dockerfile
+    ports:
+      - "3001:3000"  # Map port 3000 on the host to port 5000 in the container
+  client:
+    build: ./client  # Path to the frontend Dockerfile
+    ports:
+      - "1234:1234"  # Map port 1234 on the host to port 3000 in the container
